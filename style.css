@@ -1,0 +1,42 @@
+/* Ordem de especificidade */
+
+/* Primeira: id "#" (1,0,0) */
+/* Segunda: class "." (0,1,0) */
+/* Terceira: element (0,0,1) */
+
+body {
+  font-size: 2rem;
+}
+
+/* !important: Regra do CSS utilizada para adicionar importância a um elemento. O elemento se torna mais importante do que o id. Quando utilizado em mais de um elemento, a regra de especificidade prevalece. */
+
+h2 {
+  color: black !important;
+  border-top: 2px solid blue;
+}
+
+/* (1,0,0) */
+#produtos {
+  color: lightgreen;
+}
+
+/* (0,2,0) */
+.titulo.teste {
+  color: blue;
+}
+
+/* (0,1,0) */
+.titulo {
+  color: tomato;
+  padding: 10px;
+}
+
+/* (0,0,4) */
+html body section h2 {
+  border-left: 8px solid lightgreen;
+}
+
+/* (1,0,3) */
+body section#intro h2 {
+  border-left: 8px solid lightsalmon;
+}
